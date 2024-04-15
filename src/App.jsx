@@ -10,9 +10,7 @@ function App() {
     password: "",
   });
 
-  console.log(formState, "formState");
-
-  console.log(process.env, "process");
+  console.log(import.meta.env.VITE_NODE_APP_ENV);
 
   const handleInputChange = (event) => {
     console.log(event, "event");
