@@ -12,7 +12,7 @@ function App() {
 
   console.log(formState, "formState");
 
-  // console.log(import.meta.env.NODE_APP_ENV);
+  console.log(process.env, "process");
 
   const handleInputChange = (event) => {
     console.log(event, "event");
