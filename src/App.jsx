@@ -12,7 +12,7 @@ function App() {
 
   console.log(formState, "formState");
 
-  console.log(import.meta.env.NODE_APP_ENV);
+  // console.log(import.meta.env.NODE_APP_ENV);
 
   const handleInputChange = (event) => {
     console.log(event, "event");
@@ -41,12 +41,23 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleGetUser = () => {
+    axios.get(
+      `https://node-day04.onrender.com/getuser?username=${formState.username}`
+    );
+  };
+
   return (
     <>
       <div>
         <input name="username" onChange={handleInputChange} />
         <input name="password" onChange={handleInputChange} />
         <button onClick={handleCreate}>Create User</button>
+      </div>
+      <br />
+
+      <div>
+        <button onClick={handleGetUser}>Get User</button>
       </div>
     </>
   );
